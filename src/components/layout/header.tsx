@@ -5,7 +5,7 @@ import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 export const Header = () => {
   return (
-    <header className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm border-b sticky top-0 z-50">
+    <header className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm border-b lg:sticky lg:top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
@@ -19,7 +19,7 @@ export const Header = () => {
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden lg:flex items-center space-x-6">
             <Link to="/" className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors">
               <span>Accueil</span>
             </Link>
@@ -50,14 +50,14 @@ export const Header = () => {
             </Button>
             
             <Link to="/login">
-              <Button variant="ghost" size="sm" className="hidden md:flex items-center space-x-1">
+              <Button variant="ghost" size="sm" className="hidden lg:flex items-center space-x-1">
                 <LogIn className="h-4 w-4" />
                 <span>Connexion</span>
               </Button>
             </Link>
             
             <Link to="/register">
-              <Button size="sm" className="hidden md:flex btn-gradient">
+              <Button size="sm" className="hidden lg:flex btn-gradient">
                 <UserPlus className="h-4 w-4 mr-1" />
                 Inscription
               </Button>
@@ -67,7 +67,7 @@ export const Header = () => {
             <Button 
               variant="outline" 
               size="sm"
-              className="sm:hidden flex items-center space-x-1 border-nounou-orange text-nounou-orange hover:bg-nounou-orange hover:text-white"
+              className="lg:hidden flex items-center space-x-1 border-nounou-orange text-nounou-orange hover:bg-nounou-orange hover:text-white"
             >
               <span className="text-xs font-semibold">✨</span>
               <span>Premium</span>
@@ -76,7 +76,7 @@ export const Header = () => {
         </div>
         
         {/* Mobile menu */}
-        <nav className="md:hidden mt-4 pt-4 border-t">
+        <nav className="lg:hidden mt-4 pt-4 border-t">
           <div className="flex flex-col space-y-2">
             <Link to="/" className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors py-2">
               <span>Accueil</span>
