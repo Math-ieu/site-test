@@ -26,7 +26,7 @@ const Login = () => {
             </div>
             <h1 className="text-3xl font-bold text-gradient mb-2">Connexion</h1>
             <p className="text-muted-foreground">
-              Connectez-vous à votre compte NounouConnect
+              Connectez-vous à votre compte nounou.ma
             </p>
           </div>
 

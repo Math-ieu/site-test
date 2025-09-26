@@ -28,7 +28,7 @@ const Register = () => {
             </div>
             <h1 className="text-3xl font-bold text-gradient mb-2">Inscription</h1>
             <p className="text-muted-foreground">
-              Rejoignez la communauté NounouConnect
+              Rejoignez la communauté nounou.ma 
             </p>
           </div>
 
