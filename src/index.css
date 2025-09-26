@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 14% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 14% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 14% 18%;
+
+    --primary: 207 90% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 82% 52%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 207 90% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 207 90% 54%;
+
+    --radius: 0.75rem;
+
+    /* Nounou.ma specific colors */
+    --nounou-blue: 207 90% 54%;
+    --nounou-pink: 340 82% 52%;
+    --nounou-orange: 36 100% 50%;
+    --nounou-light-blue: 207 90% 85%;
+    --nounou-light-pink: 340 82% 85%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--nounou-blue)), hsl(var(--nounou-pink)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--nounou-blue) / 0.95), hsl(var(--nounou-pink) / 0.95));
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--muted) / 0.3));
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-float: float 6s ease-in-out infinite;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 27% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 27% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 27% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 207 90% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 82% 52%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 27% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 207 90% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 27% 15%;
+    --input: 220 27% 15%;
+    --ring: 207 90% 54%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary/90 text-secondary-foreground;
+  }
+
+  .btn-gradient {
+    background: var(--gradient-primary);
+    @apply text-white hover:opacity-90 transition-opacity;
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+    @apply backdrop-blur-sm border border-white/20;
+  }
+
+  .hero-bg {
+    background: var(--gradient-hero);
+    position: relative;
+  }
+
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .animate-float {
+    animation: var(--animation-float);
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .article-content h2 {
+    @apply text-2xl font-bold mt-8 mb-4;
+  }
+
+  .article-content h3 {
+    @apply text-xl font-semibold mt-6 mb-3;
+  }
+
+  .article-content h4 {
+    @apply text-lg font-semibold mt-4 mb-2;
+  }
+
+  .article-content p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .article-content ul {
+    @apply mb-4 pl-6 space-y-2;
+  }
+
+  .article-content li {
+    @apply list-disc;
+  }
+
+  .article-content strong {
+    @apply font-semibold;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
