@@ -21,7 +21,6 @@ export const Header = () => {
 
           <nav className="hidden md:flex items-center space-x-6">
             <Link to="/" className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors">
-              
               <span>Accueil</span>
             </Link>
             <Link to="/parents" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -51,18 +50,28 @@ export const Header = () => {
             </Button>
             
             <Link to="/login">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-1">
+              <Button variant="ghost" size="sm" className="hidden md:flex items-center space-x-1">
                 <LogIn className="h-4 w-4" />
                 <span>Connexion</span>
               </Button>
             </Link>
             
             <Link to="/register">
-              <Button size="sm" className="btn-gradient">
+              <Button size="sm" className="hidden md:flex btn-gradient">
                 <UserPlus className="h-4 w-4 mr-1" />
                 Inscription
               </Button>
             </Link>
+            
+            {/* Bouton premium pour mobile uniquement */}
+            <Button 
+              variant="outline" 
+              size="sm"
+              className="sm:hidden flex items-center space-x-1 border-nounou-orange text-nounou-orange hover:bg-nounou-orange hover:text-white"
+            >
+              <span className="text-xs font-semibold">✨</span>
+              <span>Premium</span>
+            </Button>
           </div>
         </div>
         
@@ -70,7 +79,6 @@ export const Header = () => {
         <nav className="md:hidden mt-4 pt-4 border-t">
           <div className="flex flex-col space-y-2">
             <Link to="/" className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors py-2">
-              <Home className="h-4 w-4" />
               <span>Accueil</span>
             </Link>
             <Link to="/parents" className="text-muted-foreground hover:text-foreground transition-colors py-2">
@@ -83,7 +91,6 @@ export const Header = () => {
               Comment ça marche
             </Link>
             <Link to="/blog" className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors py-2">
-              <BookOpen className="h-4 w-4" />
               <span>Blog</span>
             </Link>
             <div className="flex space-x-2 pt-2">
