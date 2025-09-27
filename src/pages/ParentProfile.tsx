@@ -5,20 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { 
-  ArrowLeft, 
-  MapPin, 
-  Calendar, 
-  Users, 
-  Clock, 
-  Phone, 
-  Flag, 
-  AlertTriangle,
-  MessageCircle,
-  Euro,
-  CheckCircle,
-  Globe
-} from "lucide-react";
+import { ArrowLeft, MapPin, Calendar, Users, Clock, Phone, Flag, TriangleAlert as AlertTriangle, MessageCircle, Euro, CircleCheck as CheckCircle, Globe } from "lucide-react";
 
 const ParentProfile = () => {
   const { id } = useParams();
