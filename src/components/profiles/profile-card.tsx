@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Clock, Star } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Link } from "react-router-dom";
 
 interface ProfileCardProps {
   name: string;
@@ -24,8 +25,11 @@ export const ProfileCard = ({
   rating,
   availability 
 }: ProfileCardProps) => {
+  const profileLink = type === "parent" ? `/parent/1` : `/nounou/1`;
+
   return (
-    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border-white/20 card-gradient">
+    <Link to={profileLink}>
+      <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border-white/20 card-gradient">
       <CardContent className="p-6">
         <div className="flex items-start space-x-4">
           <div className="relative">
@@ -87,5 +91,6 @@ export const ProfileCard = ({
         </div>
       </CardContent>
     </Card>
+    </Link>
   );
 };
