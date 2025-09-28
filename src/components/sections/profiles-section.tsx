@@ -20,15 +20,15 @@ interface ProfilesSectionProps {
 
 export const ProfilesSection = ({ title, subtitle, profiles }: ProfilesSectionProps) => {
   return (
-    <section className="py-16 bg-gradient-to-br from-muted/30 to-background">
+    <section className="py-12 md:py-16 bg-gradient-to-br from-muted/30 to-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gradient mb-2">{title}</h2>
-          <p className="text-muted-foreground text-lg">{subtitle}</p>
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gradient mb-2">{title}</h2>
+          <p className="text-muted-foreground text-base md:text-lg">{subtitle}</p>
         </div>
 
         <div className="relative">
-          <div className="flex items-center justify-between mb-6">
+          <div className="hidden md:flex items-center justify-between mb-6">
             <Button variant="ghost" size="icon" className="rounded-full bg-white shadow-md hover:shadow-lg">
               <ChevronLeft className="h-5 w-5" />
             </Button>
@@ -43,7 +43,7 @@ export const ProfilesSection = ({ title, subtitle, profiles }: ProfilesSectionPr
             ))}
           </div>
 
-          <div className="text-center mt-8">
+          <div className="text-center mt-6 md:mt-8">
             <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
               Voir tous les profils
             </Button>

@@ -16,13 +16,13 @@ export const HeroSearch = () => {
   const [selectedCity, setSelectedCity] = useState("");
 
   return (
-    <Card className="card-gradient p-8 max-w-md mx-auto backdrop-blur-md border-white/20 shadow-2xl">
+    <Card className="card-gradient p-6 md:p-8 max-w-md mx-auto backdrop-blur-md border-white/20 shadow-2xl">
       <div className="space-y-6">
         <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-2">
+          <h2 className="text-xl md:text-2xl font-semibold mb-2">
             Trouvez une nounou/babysitter
           </h2>
-          <p className="80 text-sm">dans votre région</p>
+          <p className="text-sm md:text-base">dans votre région</p>
         </div>
 
         <div className="space-y-4">
@@ -68,7 +68,7 @@ export const HeroSearch = () => {
           </div>
 
           <Button 
-            className="w-full btn-gradient text-lg py-6 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+            className="w-full btn-gradient text-base md:text-lg py-4 md:py-6 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
             size="lg"
           >
             <Search className="mr-2 h-5 w-5" />

@@ -281,14 +281,15 @@ J'ai une approche éducative basée sur le jeu et la créativité. Je suis très
                 <CardTitle>Planning hebdomadaire</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="overflow-x-auto">
-                  <table className="w-full border-collapse">
+                <div className="overflow-x-auto -mx-2">
+                  <table className="w-full border-collapse text-sm">
                     <thead>
                       <tr>
-                        <th className="border p-2 bg-muted text-left">Horaires</th>
+                        <th className="border p-1 md:p-2 bg-muted text-left text-xs md:text-sm">Horaires</th>
                         {days.map(day => (
-                          <th key={day} className="border p-2 bg-muted text-center min-w-[100px]">
-                            {day}
+                          <th key={day} className="border p-1 md:p-2 bg-muted text-center min-w-[60px] md:min-w-[100px]">
+                            <span className="hidden md:inline">{day}</span>
+                            <span className="md:hidden">{day.slice(0, 3)}</span>
                           </th>
                         ))}
                       </tr>
@@ -296,16 +297,16 @@ J'ai une approche éducative basée sur le jeu et la créativité. Je suis très
                     <tbody>
                       {timeSlots.map(time => (
                         <tr key={time}>
-                          <td className="border p-2 font-medium">{time}</td>
+                          <td className="border p-1 md:p-2 font-medium text-xs md:text-sm">{time}</td>
                           {days.map(day => {
                             const isActive = nounouProfile.schedule[day]?.some(slot => {
                               const [start, end] = slot.split('-');
                               return time >= start && time < end;
                             });
                             return (
-                              <td key={`${day}-${time}`} className="border p-2 text-center">
+                              <td key={`${day}-${time}`} className="border p-1 md:p-2 text-center">
                                 {isActive && (
-                                  <div className="w-4 h-4 bg-nounou-pink rounded mx-auto"></div>
+                                  <div className="w-3 h-3 md:w-4 md:h-4 bg-nounou-pink rounded mx-auto"></div>
                                 )}
                               </td>
                             );
@@ -427,11 +428,17 @@ J'ai une approche éducative basée sur le jeu et la créativité. Je suis très
                 <CardTitle>Localisation</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="aspect-square bg-muted rounded-lg flex items-center justify-center mb-4">
-                  <div className="text-center">
-                    <MapPin className="h-8 w-8 text-muted-foreground mx-auto mb-2" />
-                    <p className="text-sm text-muted-foreground">Carte</p>
-                  </div>
+                <div className="aspect-square rounded-lg overflow-hidden mb-4">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.0234567890123!2d-6.8498!3d33.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDU4JzE3LjgiTiA2wrA1MCc1OS4zIlc!5e0!3m2!1sen!2sma!4v1234567890123"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Localisation Nounou"
+                  />
                 </div>
                 <p className="text-sm text-muted-foreground flex items-center">
                   <MapPin className="h-4 w-4 mr-2" />
