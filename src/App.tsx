@@ -16,10 +16,12 @@ import Contact from "./pages/Contact";
 import ParentProfile from "./pages/ParentProfile";
 import NounouProfile from "./pages/NounouProfile";
 import NotFound from "./pages/NotFound";
+import { Analytics } from '@vercel/analytics/react';
  
 const queryClient = new QueryClient();
 
 const App = () => (
+  <>
   <QueryClientProvider client={queryClient}>
     <ThemeProvider defaultTheme="light" storageKey="nounouconnect-theme">
       <TooltipProvider>
@@ -45,6 +47,8 @@ const App = () => (
       </TooltipProvider>
     </ThemeProvider>
   </QueryClientProvider>
+  <Analytics />
+   </>
 );
 
 export default App;
